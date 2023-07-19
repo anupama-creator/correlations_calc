@@ -49,7 +49,6 @@
        integer :: rgw,n ! 
        integer,allocatable :: gwi(:),rgwi(:)
        integer(kind=1),allocatable :: ht_value(:,:) ! hit value to identify if water is inside the channel or not
-       real(kind=8),allocatable :: rw_msd(:,:,:) ! msd of those water that are present inside the channel
        real(kind=8) :: dr(3)
        integer :: j1,mk,ii,im,jm,ja
        integer :: i,j,k
@@ -116,6 +115,7 @@ input: do inp = 1,ninput
        write(*,*)'Finished reading inputs'
 !=======================================================================
        total_atom = nmol_PGC*natom_PGC + nmol_water*natom_water + nmol_PFL*natom_PFL
+       dt = 1.0
 !=======================================================================
 ! open *.gro file to read system information 
 !-----------------------------------------------------------------------
